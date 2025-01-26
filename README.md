@@ -84,5 +84,6 @@ Add your Alpha Vantage API key to the .env file:
 Comment out lines 20-22 in the app/Services/AlphaVantageService.php file to disable the mock response and allow real API calls.
 
 Run 
+    ```sh
     php artisan fetch:stock-prices
-
+    ``` 
