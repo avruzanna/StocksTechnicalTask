@@ -17,9 +17,9 @@ This project is a stock aggregator application built with Laravel. It fetches st
     composer install
     ```    
 3. Copy .env.example to .env
-
+    ```sh
     cp .env.example .env
-
+    ``` 
 4. Environment Variables
 
 Ensure the following environment variables are set in your .env file:
