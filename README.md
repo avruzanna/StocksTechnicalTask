@@ -53,9 +53,8 @@ ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key
 
 The cron job responsible for fetching stock prices will execute every minute. However, if you want to populate the database with stock data immediately, you can manually run the following Artisan command:
 
-    ```sh
     php artisan fetch:stock-prices
-    ```
+
 ## Important Notice 2:
 
 The Alpha Vantage API has a rate limit that may restrict the number of requests you can make within a specific timeframe. To facilitate development and testing without exceeding the API limits, an example JSON response is provided in the following file:
