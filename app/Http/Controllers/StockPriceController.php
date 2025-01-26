@@ -43,7 +43,7 @@ class StockPriceController extends Controller
 
 
         return view('stocks', [
-            "info"=>"ddd",
+            "info"=>"",
             'stocks' => $response,
         ]);
     }

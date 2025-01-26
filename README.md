@@ -12,27 +12,33 @@ This project is a stock aggregator application built with Laravel. It fetches st
     git clone https://github.com/avruzanna/StocksTechnicalTask.git
     cd StocksTechnicalTask
     ```
-2. Create vendo 
+2. Create vendor 
     ```sh
     composer install
     ```    
-3. Environment Variables
+3. Copy .env.example to .env
+
+    cp .env.example .env
+
+4. Environment Variables
 
 Ensure the following environment variables are set in your .env file:
 
 ```plaintext
 APP_NAME=StockAggregator
 APP_ENV=local
-APP_KEY=base64:random_app_key
+APP_KEY=base64:rcGSsbj5RiTghwmJKk2O0oi1gwSKRxFLzJ6FhwQaHPA=
 APP_DEBUG=true
 APP_URL=http://localhost
+
 
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
 DB_DATABASE=stocks
-DB_USERNAME=admin
-DB_PASSWORD=adminStockDb#
+DB_USERNAME=root
+DB_PASSWORD="stockDb#"
+DB_DEBUG=true
 
 REDIS_HOST=redis
 REDIS_PORT=6379
@@ -42,9 +48,9 @@ REDIS_CLIENT=predis
 ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key
 ```
 
-4. Build and start the Docker containers:
+5. Build and start the Docker containers:
     ```sh
-    docker-compose up --build
+    docker compose -f 'docker-compose.yml' up -d --build 
     ```
     
 ## Usage
@@ -53,6 +59,8 @@ The application will be available at `http://localhost:8000`.
 
 PhpMyAdmin will be available at `http://localhost:8080`.
 
+    username: admin
+    password: adminStockDb#
 
 
 ## Important Notice 1:
@@ -75,4 +83,6 @@ Add your Alpha Vantage API key to the .env file:
 
 Comment out lines 20-22 in the app/Services/AlphaVantageService.php file to disable the mock response and allow real API calls.
 
+Run 
+    php artisan fetch:stock-prices
 
