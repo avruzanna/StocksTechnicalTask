@@ -12,8 +12,11 @@ This project is a stock aggregator application built with Laravel. It fetches st
     git clone https://github.com/avruzanna/StocksTechnicalTask.git
     cd StocksTechnicalTask
     ```
-    
-2. Environment Variables
+2. Create vendo 
+    ```sh
+    composer install
+    ```    
+3. Environment Variables
 
 Ensure the following environment variables are set in your .env file:
 
@@ -39,7 +42,7 @@ REDIS_CLIENT=predis
 ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key
 ```
 
-3. Build and start the Docker containers:
+4. Build and start the Docker containers:
     ```sh
     docker-compose up --build
     ```
