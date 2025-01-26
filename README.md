@@ -65,9 +65,8 @@ If you want to use the real API, make sure to:
 
 Add your Alpha Vantage API key to the .env file:
 
-    ```sh
-        ALPHA_VANTAGE_API_KEY=your_api_key_here
-    ```
+    ALPHA_VANTAGE_API_KEY=your_api_key_here
+
 Comment out lines 20-22 in the app/Services/AlphaVantageService.php file to disable the mock response and allow real API calls.
 
 
