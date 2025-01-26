@@ -85,6 +85,6 @@ Comment out lines 20-22 in the app/Services/AlphaVantageService.php file to disa
 
 Run 
 
-    ```sh
+    
     php artisan fetch:stock-prices
-    ``` 
+    
