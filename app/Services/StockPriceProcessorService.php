@@ -40,7 +40,7 @@ class StockPriceProcessorService {
             'close'     => $stockData['4. close'],
             'previous_close' => $previousClosePrice,
             'percentage_change' => $percentageChange,
-            'recorded_at'=> now()
+            'recorded_at'=> $latestTime
         ];
 
         // Store the data in the database
