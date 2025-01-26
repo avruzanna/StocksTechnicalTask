@@ -9,7 +9,7 @@ This project is a stock aggregator application built with Laravel. It fetches st
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/stock-aggregator.git
+    git clone https://github.com/avruzanna/stock-aggregator.git
     cd stock-aggregator
     ```
     
