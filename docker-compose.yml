@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: laravel_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: stockDb#
+      MYSQL_DATABASE: stocks
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: adminStockDb#
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: laravel_phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: stockDb#
+    ports:
+      - "8080:80"
+  redis:
+    image: redis:alpine
+    container_name: laravel_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass strongpassword123
+  app:
+      build:
+        context: .
+      container_name: stock_aggregator_app
+      ports:
+        - "8000:8000"
+      volumes:
+        - .:/var/www/html
+      environment:
+        APP_KEY: base64:random_app_key
+        APP_ENV: local
+        DB_CONNECTION: mysql
+        DB_HOST: mysql
+        DB_PORT: 3306
+        DB_DATABASE: stocks
+        DB_USERNAME: admin
+        DB_PASSWORD: adminStockDb#
+        REDIS_HOST: redis
+        REDIS_PORT: 6379
+        REDIS_PASSWORD: strongpassword123
+        CACHE_DRIVER: redis
+        SESSION_DRIVER: redis
+      depends_on:
+        - mysql
+
+volumes:
+  mysql_data:
