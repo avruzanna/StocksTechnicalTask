@@ -9,8 +9,8 @@ This project is a stock aggregator application built with Laravel. It fetches st
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/avruzanna/stock-aggregator.git
-    cd stock-aggregator
+    git clone https://github.com/avruzanna/StocksTechnicalTask.git
+    cd StocksTechnicalTask
     ```
     
 2. Build and start the Docker containers:
@@ -22,6 +22,7 @@ This project is a stock aggregator application built with Laravel. It fetches st
 
 The application will be available at `http://localhost:8000`.
 
+PhpMyAdmin will be available at `http://localhost:8080`.
 
 ## Environment Variables
 
